@@ -1,0 +1,131 @@
+body{
+    /* background-color: #2e2e2e;
+	background-repeat: repeat; */
+	font-size: 12px;
+}
+header h1{
+    font-size: 3.5em;
+}
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; 
+    height: 50px;
+}
+.nav li {
+    float: left;
+    border-right: 1px solid #bbb;
+    width: 10%;
+    font-size: 1.5em;
+}
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav li a:hover {
+    background-color: rgb(12, 214, 228);
+}
+
+main{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sidebar{
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    float: left;
+}
+
+.aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+}
+.aside h2{
+    color: white;
+    font-size: 2em;
+}
+.aside li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+  /* Change the link color on hover */
+.aside li a:hover {
+    background-color: rgb(12, 214, 228);
+}
+
+.bestSellers{
+    margin-top: 10px;
+    text-align: center;
+    background-color: #333;
+    border: 0.5px solid grey;
+}
+.bestSellers h2{
+    color: white;
+    font-size: 2em;
+}
+.bestSellers img {
+    width: 100%;
+    height: 70%;
+}
+.bestSellers a{
+    width: 100%;
+    height: 15%;
+    color: white;
+    font-size: 1.5em;
+}
+.bestSellers p{
+    width: 100%;
+    height: 15%;
+    color: white;
+    font-size: 1.5em;
+}
+
+.content{
+    float: right;
+    width: 85%;
+    margin-bottom: 3em;
+}
+.content h2{
+    text-align: center;
+    font-size: 3em;
+}
+
+.products{
+    display: flex;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    padding: 0;
+    text-align: center;
+}
+.products section{
+    flex: 1 1 auto;
+    height: 550px;
+    font-size: 1.5em;
+    border: 0.5px solid black;
+    background-color: #333;
+    color: white;
+}
+.products img{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    height: 65%;
+}
+.products p{
+    margin-top: 0;
+}
