@@ -1,0 +1,53 @@
+.login{
+    text-align: center;
+    width: 20%;
+    margin: auto;
+    font-size: 2em;
+}
+.login form{
+    border: 2px solid black;
+}
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; 
+    height: 50px;
+}
+.header li {
+    float: left;
+    border-right: 1px solid #bbb;
+    width: 10%;
+    font-size: 1.5em;
+}
+.header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.header li a:hover {
+    background-color: rgb(12, 214, 228);
+}
+
+.info{
+    display: flex;
+    width: 100%;
+}
+.info th{
+    border: 1px solid black;
+}
+.info .first{
+    width: 30%;
+    padding: 2em;
+    border: 1px solid black;
+    justify-content: center;
+}
+.info .second{
+    width: 70%;
+    border: 1px solid black;
+    justify-content: center;
+}

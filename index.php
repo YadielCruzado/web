@@ -1,7 +1,15 @@
 <?php include('template/header.php');  ?>
 
+<?php
+include("dashboard/config/db.php");
+
+$senteciaSQL=$conexion->prepare("SELECT * from productos");
+$senteciaSQL->execute();
+$listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
+?>
+
     <main>
-        <div class = "sidebar">
+        <section class = "sidebar">
             <div class= "aside">
                 <ul>
                     <h2>Categories</h2>
@@ -31,79 +39,21 @@
                     <p>$114.99</p>
                 </section>
             </div>
-        </div>
-        <div class="content">
-            <h2>Products</h2>
-            <div class="products">
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-            </div>
-            <div class="products">
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-            </div>
-            <div class="products">
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-                <section >
-                    <img src="img/01.jpg" alt="01"> 
-                    <p>Tamiya Subaru WRX STI 24th Nurburgring 1/10 4WD Electric Touring Car Kit (TT-02)</p>
-                    <p>Price: $114.99</p>
-                    <input type="submit" value="Add to cart">
-                    <input type= "submit" value="Details">
-                </section>
-            </div>
-        </div>
+        </section>
+        <section class="content">
+            <h2>products</h2>
+            <?PHP foreach($listaProductos as $productos) { ?>
+                <div class="product_box">
+                    <?php if($productos['Img']!=""){ ?>
+                        <img src="img/products/<?php echo $productos['Img'];?>">
+                    <?php } ?>
+                    <h3><?php echo $productos['Name']; ?></h3>
+                    <p class="product_price">Price: <?php echo $productos['Price']; ?></p>
+                    <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
+                    <a href="productdetail.html" class="detail">Detail</a>
+                </div>
+            <?php } ?>
+        </section>
     </main>
 
 <?php include('template/footer.php');  ?>

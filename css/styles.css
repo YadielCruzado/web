@@ -1,0 +1,148 @@
+body{
+    /* background-color: #2e2e2e;
+	background-repeat: repeat; */
+	font-size: 12px;
+}
+header h1{
+    font-size: 3.5em;
+}
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; 
+    height: 50px;
+}
+.nav li {
+    float: left;
+    border-right: 1px solid #bbb;
+    width: 10%;
+    font-size: 1.5em;
+}
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav li a:hover {
+    background-color: rgb(12, 214, 228);
+}
+
+main{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sidebar{
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    float: left;
+}
+
+.aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+}
+.aside h2{
+    color: white;
+    font-size: 2em;
+}
+.aside li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+  /* Change the link color on hover */
+.aside li a:hover {
+    background-color: rgb(12, 214, 228);
+}
+
+.bestSellers{
+    margin-top: 10px;
+    text-align: center;
+    background-color: #333;
+    border: 0.5px solid grey;
+}
+.bestSellers h2{
+    color: white;
+    font-size: 2em;
+}
+.bestSellers img {
+    width: 100%;
+    height: 70%;
+}
+.bestSellers a{
+    width: 100%;
+    height: 15%;
+    color: white;
+    font-size: 1.5em;
+}
+.bestSellers p{
+    width: 100%;
+    height: 15%;
+    color: white;
+    font-size: 1.5em;
+}
+
+.content{
+    width: 80%;
+	padding: 14px; 
+    float: right;
+}
+.product_box {
+	float: left;
+	width: 31.5%;
+	text-align: center;
+	margin: 0 10px 30px 0;
+}
+
+.product_box img {
+	margin-bottom: 5px;
+    width: 80%;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.product_box h3 {
+	font-size: 1.5em;
+	color: #000;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.product_box .product_price {
+	color: #8fb410;
+	font-size: 14px;
+	font-weight: 700
+}
+
+.product_box .add_to_card {
+	float: left;
+	display: block;
+	width: 50%;
+	height: 28px;
+	line-height: 28px;	
+	text-align: center;
+	color: #fff;
+    background-color: blue;
+}
+
+.product_box .detail {
+	float: left;
+	display: block;
+	width: 50%;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;	
+	background-color: wheat;
+}
