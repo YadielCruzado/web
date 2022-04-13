@@ -13,8 +13,6 @@
         <div class="nav">
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="products.php">Products</a></li>
-                <li><a href="nose.php">Brands</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="#">Account</a></li>
                 <li><a href="#">Cart</a></li>

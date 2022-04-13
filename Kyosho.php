@@ -2,7 +2,7 @@
 <?php
 include("dashboard/config/db.php");
 
-$senteciaSQL=$conexion->prepare("SELECT * from productos");
+$senteciaSQL=$conexion->prepare("SELECT * from productos where Brand='Kyosho'");
 $senteciaSQL->execute();
 $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
 ?>

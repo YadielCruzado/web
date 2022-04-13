@@ -50,4 +50,5 @@
     width: 70%;
     border: 1px solid black;
     justify-content: center;
+    overflow: hidden;
 }
