@@ -12,6 +12,7 @@ $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
             <div class= "aside">
                 <ul>
                     <h2>Categories</h2>
+                    <li><a href="index.php">Productos </a></li>
                     <li><a href="Traxxas.php">Traxxas </a></li>
                     <li><a href="Tamiya.php">Tamiya</a></li>
                     <li><a href="Kyosho.php">Kyosho</a></li>

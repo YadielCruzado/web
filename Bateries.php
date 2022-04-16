@@ -1,9 +1,8 @@
 <?php include('template/header.php');  ?>
-<!-- where Brand='' -->
 <?php
 include("dashboard/config/db.php");
 
-$senteciaSQL=$conexion->prepare("SELECT * from productos");
+$senteciaSQL=$conexion->prepare("SELECT * from productos where Brand='Batteries'");
 $senteciaSQL->execute();
 $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -13,6 +12,7 @@ $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
             <div class= "aside">
                 <ul>
                     <h2>Categories</h2>
+                    <li><a href="index.php">Productos </a></li>
                     <li><a href="Traxxas.php">Traxxas </a></li>
                     <li><a href="Tamiya.php">Tamiya</a></li>
                     <li><a href="Kyosho.php">Kyosho</a></li>
@@ -22,7 +22,7 @@ $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </section>
         <section class="content">
-            <h2>products</h2>
+            <h2>Batteries</h2>
             <?PHP foreach($listaProductos as $productos) { ?>
                 <div class="product_box">
                     <?php if($productos['Img']!=""){ ?>
