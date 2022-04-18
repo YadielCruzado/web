@@ -5,6 +5,9 @@ include("dashboard/config/db.php");
 $senteciaSQL=$conexion->prepare("SELECT * from productos");
 $senteciaSQL->execute();
 $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
+
+$total_Productos = $conexion->query("SELECT * from productos")->rowCount();//  para ver el total de productos
+ 
 ?>
 
     <main>
@@ -22,7 +25,8 @@ $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </section>
         <section class="content">
-            <h2>products</h2>
+            <!-- <h2><?=$total_Productos?>products</h2> para ver el total de productos -->
+            <h2>Products</h2>
             <?PHP foreach($listaProductos as $productos) { ?>
                 <div class="product_box">
                     <?php if($productos['Img']!=""){ ?>
@@ -31,7 +35,7 @@ $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
                     <h3><?php echo $productos['Brand'],' ', $productos['Name']; ?></h3>
                     <p class="product_price">Price: <?php echo $productos['Price']; ?></p>
                     <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
-                    <a href="productdetail.html" class="detail">Detail</a>
+                    <a href="details.php?id=<?=$productos['Id']?>" class="detail" >details</a>
                 </div>
             <?php } ?>
         </section>

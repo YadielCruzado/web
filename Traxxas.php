@@ -31,7 +31,7 @@ $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
                     <h3><?php echo $productos['Brand'],' ', $productos['Name']; ?></h3>
                     <p class="product_price">Price: <?php echo $productos['Price']; ?></p>
                     <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
-                    <a href="productdetail.html" class="detail">Detail</a>
+                    <a href="details.php?id=<?=$productos['Id']?>" class="detail" >details</a>
                 </div>
             <?php } ?>
         </section>

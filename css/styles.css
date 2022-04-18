@@ -67,7 +67,7 @@ main{
     background-color: rgb(12, 214, 228);
 }
 
-.bestSellers{
+/* .bestSellers{
     margin-top: 10px;
     text-align: center;
     background-color: #333;
@@ -92,7 +92,7 @@ main{
     height: 15%;
     color: white;
     font-size: 1.5em;
-}
+} */
 
 .content{
     width: 80%;
@@ -147,4 +147,10 @@ main{
 	line-height: 28px;
 	text-align: center;	
 	background-color: wheat;
+}
+.product_wrapper {
+	float:left;
+	padding: 10px;
+	text-align: center;
+    width: 80%;
 }

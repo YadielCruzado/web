@@ -12,10 +12,11 @@
         <h1>Carritos Carreros</h1>
         <div class="nav">
             <ul>
-                <li><a href="/web/dashboard/index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><a href="/web/dashboard/index.php">Dashboard</a></li>
+                <li><a href="index.php">inicio</a></li>
+                <li><a href="about.php">acerca de</a></li>
+                <li><a href="#">cuenta</a></li>
+                <li><a href="#">carrito</a></li>
             </ul>
         </div>
         <br>
