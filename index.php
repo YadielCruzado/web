@@ -36,6 +36,10 @@ $total_Productos = $conexion->query("SELECT * from productos")->rowCount();//  p
                     <p class="product_price">Price: <?php echo $productos['Price']; ?></p>
                     <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
                     <a href="details.php?id=<?=$productos['Id']?>" class="detail" >details</a>
+                    <form method='post' action=''>
+                    <input type='hidden' name='code' value=".$productos['Id']." />
+                    <button type='submit' class='buy'>Buy Now</button>
+                    </form>
                 </div>
             <?php } ?>
         </section>
