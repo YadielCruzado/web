@@ -1,5 +1,9 @@
 <?php
 
+define("KEY","Carritos");
+define("COD","AES-128-ECB");
+
+
 $host="localhost";
 $bd="carritos";
 $user="root";

@@ -1,3 +1,7 @@
+<?php
+include("dashboard/config/db.php");
+include("cart.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +13,17 @@
 </head>
 <body>
     <header>
-        <h1>Carritos Carreros</h1>
+        <div class="espacio">
+            <h1>Carritos Carreros</h1>
+        </div>
         <div class="nav">
             <ul>
                 <li><a href="/web/dashboard/index.php">Dashboard</a></li>
                 <li><a href="index.php">inicio</a></li>
-                <li><a href="about.php">acerca de</a></li>
+                <!-- <li><a href="about.php">acerca de</a></li> -->
                 <li><a href="#">cuenta</a></li>
-                <li><a href="#">carrito</a></li>
+                <li><a href="showcart.php">carrito</a></li>
+                <li><a href="login.php">Log in</a></li>
             </ul>
         </div>
         <br>

@@ -1,13 +1,11 @@
 <?php include('template/header.php');  ?>
 <?php
-include("dashboard/config/db.php");
 
 $senteciaSQL=$conexion->prepare("SELECT * from productos");
 $senteciaSQL->execute();
 $listaProductos=$senteciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
 $total_Productos = $conexion->query("SELECT * from productos")->rowCount();//  para ver el total de productos
- 
 ?>
 
     <main>
@@ -25,20 +23,21 @@ $total_Productos = $conexion->query("SELECT * from productos")->rowCount();//  p
             </div>
         </section>
         <section class="content">
-            <!-- <h2><?=$total_Productos?>products</h2> para ver el total de productos -->
-            <h2>Products</h2>
+            <h2><?=$total_Productos?> Productos</h2>
             <?PHP foreach($listaProductos as $productos) { ?>
                 <div class="product_box">
                     <?php if($productos['Img']!=""){ ?>
                         <img src="img/products/<?php echo $productos['Img'];?>">
                     <?php } ?>
                     <h3><?php echo $productos['Brand'],' ', $productos['Name']; ?></h3>
-                    <p class="product_price">Price: <?php echo $productos['Price']; ?></p>
-                    <a href="shoppingcart.html" class="add_to_card">Add to Cart</a>
-                    <a href="details.php?id=<?=$productos['Id']?>" class="detail" >details</a>
+                    <p class="product_price">Price: $<?php echo $productos['Price']; ?></p>
+                    <a href="details.php?id=<?=$productos['Id']?>" class="detail" >Detalles</a>
                     <form method='post' action=''>
-                    <input type='hidden' name='code' value=".$productos['Id']." />
-                    <button type='submit' class='buy'>Buy Now</button>
+                        <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($productos['Id'],COD,KEY);?>">
+                        <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($productos['Name'],COD,KEY);?>">
+                        <input type="hidden" name="precio" id="precio" value="<?php echo $productos['Price'];?>">
+                        <input type="hidden" name="cantidad" id="cantidad" value="<?php echo 1;?>">
+                        <button type='submit' name="Accion" value="Agregar" class='add_to_card'>Anadir al carrito</button>
                     </form>
                 </div>
             <?php } ?>

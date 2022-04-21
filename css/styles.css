@@ -1,133 +1,123 @@
 body{
-    /* background-color: #2e2e2e;
-	background-repeat: repeat; */
+    background-color: black;
 	font-size: 12px;
 }
+/* header */
 header h1{
     font-size: 3.5em;
+    color: white;
+    margin: 0;
+}
+.espacio{
+    width: 20%;
+    text-align: center;
+    background-color: #4B1768;
+    padding: 5px ;
+    margin-bottom: 5px;
 }
 .nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333; 
+    padding: 5px;
+    background-color: #4B1768; 
     height: 50px;
 }
 .nav li {
     float: left;
-    border-right: 1px solid #bbb;
-    width: 10%;
+    border-right: 2px solid white;
+    width: 150px;
     font-size: 1.5em;
 }
 .nav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 10px;
+    text-transform: uppercase;
     text-decoration: none;
+    
 }
 .nav li a:hover {
     background-color: rgb(12, 214, 228);
+    color: black;
+    font-weight: bold;
 }
-
+/* header */
 main{
     width: 100%;
     margin-bottom: 10px;
 }
-
+/* catogies */
 .sidebar{
     margin: 0;
     padding: 0;
     width: 15%;
     float: left;
 }
-
 .aside ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     width: 100%;
-    background-color: #333;
+    background-color: #4B1768;
     text-align: center;
+    
 }
 .aside h2{
     color: white;
     font-size: 2em;
+    text-transform: uppercase;
 }
 .aside li a {
     display: block;
     color: white;
-    padding: 8px 16px;
+    padding: 14px 10px;
     text-decoration: none;
     font-size: 1.5em;
 }
-  /* Change the link color on hover */
 .aside li a:hover {
     background-color: rgb(12, 214, 228);
+    color: black;
+    font-weight: bold;
 }
-
-/* .bestSellers{
-    margin-top: 10px;
-    text-align: center;
-    background-color: #333;
-    border: 0.5px solid grey;
-}
-.bestSellers h2{
-    color: white;
-    font-size: 2em;
-}
-.bestSellers img {
-    width: 100%;
-    height: 70%;
-}
-.bestSellers a{
-    width: 100%;
-    height: 15%;
-    color: white;
-    font-size: 1.5em;
-}
-.bestSellers p{
-    width: 100%;
-    height: 15%;
-    color: white;
-    font-size: 1.5em;
-} */
+/* catogies */
 
 .content{
     width: 80%;
 	padding: 14px; 
     float: right;
 }
+.content h2{
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
 .product_box {
 	float: left;
 	width: 31.5%;
     height: 350px;
 	text-align: center;
 	margin: 0 10px 30px 0;
-    border: 1px solid black;
 }
-
 .product_box img {
 	margin-bottom: 5px;
     width: 80%;
     height: 200px;
 
 }
-
 .product_box h3 {
-	font-size: 1.5em;
-	color: #000;
-	font-weight: 700;
+	font-size: 15px;
+	color: white;
+	font-weight: bold;
 	margin-bottom: 10px;
 }
-
 .product_box .product_price {
-	color: #8fb410;
+	color: white;
 	font-size: 14px;
-	font-weight: 700
+	font-weight: bold;
 }
-
 .product_box .add_to_card {
 	float: left;
 	display: block;
@@ -135,10 +125,9 @@ main{
 	height: 28px;
 	line-height: 28px;	
 	text-align: center;
-	color: #fff;
-    background-color: blue;
+    background-color: #4B1768;
+    color: white;
 }
-
 .product_box .detail {
 	float: left;
 	display: block;
@@ -146,7 +135,8 @@ main{
 	height: 28px;
 	line-height: 28px;
 	text-align: center;	
-	background-color: wheat;
+	background-color: #4B1768;
+    color: white;
 }
 .product_wrapper {
 	float:left;
