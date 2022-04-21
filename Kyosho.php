@@ -32,13 +32,13 @@ $total_Productos = $conexion->query("SELECT * from productos where Brand='Kyosho
                     <?php } ?>
                     <h3><?php echo $productos['Brand'],' ', $productos['Name']; ?></h3>
                     <p class="product_price">Price: <?php echo $productos['Price']; ?></p>
-                    <a href="details.php?id=<?=$productos['Id']?>" class="detail" >details</a>
+                    <a href="details.php?id=<?=$productos['Id']?>" class="detail" >detalles</a>
                     <form method='post' action=''>
                         <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($productos['Id'],COD,KEY);?>">
                         <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($productos['Name'],COD,KEY);?>">
                         <input type="hidden" name="precio" id="precio" value="<?php echo $productos['Price'];?>">
                         <input type="hidden" name="cantidad" id="cantidad" value="<?php echo 1;?>">
-                        <button type='submit' name="Accion" value="Agregar" class='add_to_card'>Anadir al carrito</button>
+                        <button type='submit' name="Accion" value="Agregar" class='add_to_card'>Añadir al carrito</button>
                     </form>
                 </div>
             <?php } ?>

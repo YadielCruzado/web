@@ -144,3 +144,40 @@ main{
 	text-align: center;
     width: 80%;
 }
+.back{
+    font-size: 50px;
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+.detalles{
+    
+    /* float: right; */
+    display: flex;
+}
+.detalles img{
+    width: 70%;
+    height: 700px;
+}
+.detalles div{
+    background-color: white;
+    width: 30%;
+    text-align: center;
+}
+.detalles h3{
+    font-size: xx-large;
+}
+.detalles p{
+    font-size: large;
+}
+
+.detalles .add_to_card {
+	float: left;
+	display: block;
+	width: 50%;
+	height: 28px;
+	line-height: 28px;	
+	text-align: center;
+    background-color: #4B1768;
+    color: white;
+}

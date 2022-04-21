@@ -37,7 +37,7 @@ $total_Productos = $conexion->query("SELECT * from productos")->rowCount();//  p
                         <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($productos['Name'],COD,KEY);?>">
                         <input type="hidden" name="precio" id="precio" value="<?php echo $productos['Price'];?>">
                         <input type="hidden" name="cantidad" id="cantidad" value="<?php echo 1;?>">
-                        <button type='submit' name="Accion" value="Agregar" class='add_to_card'>Anadir al carrito</button>
+                        <button type='submit' name="Accion" value="Agregar" class='add_to_card'>Añadir al carrito</button>
                     </form>
                 </div>
             <?php } ?>
