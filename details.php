@@ -19,7 +19,7 @@ $conexion = NULL;
         <img src="img/products/<?php echo $productos['Img'];?>">    
         <div>
             <h3><?php echo $productos['Brand'],' ', $productos['Name']; ?></h3>
-            <p class="price">Price: <?php echo $productos['Price']; ?></p>
+            <p class="price">Price: $<?php echo $productos['Price']; ?></p>
             <form method='post' action=''>
                 <input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($productos['Id'],COD,KEY);?>">
                 <input type="hidden" name="nombre" id="nombre" value="<?php echo openssl_encrypt($productos['Name'],COD,KEY);?>">

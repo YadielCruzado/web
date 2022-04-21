@@ -181,3 +181,12 @@ main{
     background-color: #4B1768;
     color: white;
 }
+.cart h3{
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
+.cart table{
+    color: white;
+    background-color: #4B1768;
+}
