@@ -31,10 +31,15 @@ include('template/header.php');
             <th width="40%">Tamiya MAN TGX 4x2 XLX 1/14 Semi Kit (Red)</th>
             <th width="15%">1</th>
             <th width="20%">$638</th>
-            <th width="40%">17</th>
+            <th width="40%">$1,764.95</th>
             <th width="5%">--</th>
         </tbody>
     </table>    
+</div>
+<br> <br> <br>
+<div class="checkout">
+    
+<button type='submit' name="checkout" value="checkout" class='checkout'>Checkout</button>
 </div>
 
 

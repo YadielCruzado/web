@@ -27,6 +27,7 @@ $conexion = NULL;
                 <input type="hidden" name="cantidad" id="cantidad" value="<?php echo 1;?>">
                 <button type='submit' name="Accion" value="Agregar" class='add_to_card'>Añadir al carrito</button>
             </form>
+            <br>
             <p><?php echo $productos['Detail']?></p>  
         </div>
         
