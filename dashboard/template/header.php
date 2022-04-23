@@ -25,9 +25,10 @@ session_start();
         <h1>Dashboard</h1>
         <nav>
             <ul>
-                <li><a href="">Administrador</a></li>
+                <li><a href="#">Administrador</a></li>
                 <li><a href="<?php echo $url;?>/dashboard/inicio.php">Inicio</a></li>
                 <li><a href="<?php echo $url;?>/dashboard/sections/products.php">Productos</a></li>
+                <li><a href="<?php echo $url;?>/dashboard/sections/categorias.php">Categorias</a></li>
                 <li><a href="<?php echo $url;?>/dashboard/sections/close.php">Cerrar</a></li>
                 <li><a href="<?php echo $url;?>">Ver sitio web</a></li>
             </ul>

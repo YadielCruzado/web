@@ -26,6 +26,8 @@ session_start();
         $pBrand =(isset($_POST['product_Brand']))?$_POST['product_Brand']:"";
         $pDetails =(isset($_POST['product_Detail']))?$_POST['product_Detail']:"";
         $pPrice =(isset($_POST['product_Price']))?$_POST['product_Price']:"";
+        $pCantidad =(isset($_POST['product_Cantidad']))?$_POST['product_Cantidad']:"";
+        $pTipo =(isset($_POST['product_Tipo']))?$_POST['product_Tipo']:"";
         $pImg =(isset($_FILES['product_Img']['name']))?$_FILES['product_Img']['name']:"";
         $action =(isset($_POST['action']))?$_POST['action']:"";
 
@@ -33,11 +35,13 @@ session_start();
 
         switch($action){
             case "Add":
-                $senteciaSQL = $conexion->prepare("INSERT INTO productos (Name, Brand, Detail, Price, Img) VALUES (:Name, :Brand, :Detail, :Price, :Img);");
+                $senteciaSQL = $conexion->prepare("INSERT INTO productos (Nombre, Marca, Detalles, Precio, Img, Cantidad,Tipo) VALUES (:Name, :Brand, :Detail, :Price, :Img, :Cantidad,:Tipo);");
                 $senteciaSQL->bindParam(':Name',$pName);
                 $senteciaSQL->bindParam(':Brand',$pBrand);
                 $senteciaSQL->bindParam(':Detail',$pDetails);
                 $senteciaSQL->bindParam(':Price',$pPrice);
+                $senteciaSQL->bindParam(':Cantidad',$pCantidad);
+                $senteciaSQL->bindParam(':Tipo',$pTipo);
 
                 $Date = new DateTime();
                 $fileName=($pImg!="")?$Date->getTimestamp()."_".$_FILES["product_Img"]["name"]:"img.jpg";
@@ -54,12 +58,14 @@ session_start();
                 header("location:products.php");
                 break;
             case "Modify":
-                $senteciaSQL=$conexion->prepare("UPDATE productos SET Name=:Name, Brand=:Brand, Detail=:Detail, Price=:Price WHERE Id = :Id");
+                $senteciaSQL=$conexion->prepare("UPDATE productos SET Nombre=:Name, Marca=:Brand, Detalles=:Detail, Precio=:Price, Cantidad=:Cantidad, Tipo=:Tipo WHERE Id = :Id");
                 $senteciaSQL->bindParam(':Name',$pName);
                 $senteciaSQL->bindParam(':Brand',$pBrand);
                 $senteciaSQL->bindParam(':Detail',$pDetails);
                 $senteciaSQL->bindParam(':Price',$pPrice);
                 $senteciaSQL->bindParam(':Id',$pId);
+                $senteciaSQL->bindParam(':Cantidad',$pCantidad);
+                $senteciaSQL->bindParam(':Tipo',$pTipo);
                 $senteciaSQL->execute();
 
                 if($pImg!=""){
@@ -97,11 +103,13 @@ session_start();
                 $senteciaSQL->execute();
                 $Producto=$senteciaSQL->fetch(PDO::FETCH_LAZY);
 
-                $pName=$Producto['Name'];
-                $pBrand=$Producto['Brand'];
-                $pDetails=$Producto['Detail'];
-                $pPrice=$Producto['Price'];
+                $pName=$Producto['Nombre'];
+                $pBrand=$Producto['Marca'];
+                $pDetails=$Producto['Detalles'];
+                $pPrice=$Producto['Precio'];
                 $pImg=$Producto['Img'];
+                $pCantidad=$Producto['Cantidad'];
+                $pTipo=$Producto['Tipo'];
                 break;
             case "Borrar":
 
@@ -110,7 +118,7 @@ session_start();
                 $senteciaSQL->execute();
                 $Producto=$senteciaSQL->fetch(PDO::FETCH_LAZY);
 
-                if(isset($Producto["Img"]) && ($Producto["Img"]!="img.jpg")  ){
+                if(isset($Producto["Img"]) && ($Producto["Img"]!="img.jpg") ){
                     if(file_exists("../../img/products/".$Producto["Img"])){
                         unlink("../../img/products/".$Producto["Img"]);
                     }
@@ -136,6 +144,7 @@ session_start();
                 <li><a href="">Administrador</a></li>
                 <li><a href="<?php echo $url;?>/dashboard/inicio.php">Inicio</a></li>
                 <li><a href="<?php echo $url;?>/dashboard/sections/products.php">Productos</a></li>
+                <li><a href="<?php echo $url;?>/dashboard/sections/categorias.php">Categorias</a></li>
                 <li><a href="<?php echo $url;?>/dashboard/sections/close.php">Cerrar</a></li>
                 <li><a href="<?php echo $url;?>">Ver sitio web</a></li>
             </ul>
@@ -143,7 +152,7 @@ session_start();
     </header>
     <section class="info">
         <div class="first">
-            <h2>Datos de productos</h2>
+            <h2>Anadir productos</h2>
             <form method="post" enctype="multipart/form-data">
                 <div>
                     <label for="ID">ID:</label>
@@ -166,6 +175,14 @@ session_start();
                     <input type="text" required value="<?php echo $pPrice;?>" name = "product_Price" id="product_Price" placeholder = "Enter the product Price">
                 </div>
                 <div>
+                    <label for="product_cantidad">cantidad:</label>
+                    <input type="text" required value="<?php echo $pCantidad;?>" name = "product_Cantidad" id="product_Cantidad" placeholder = "Enter the product cantidad">
+                </div>
+                <div>
+                    <label for="product_Tipo">Tipo:</label>
+                    <input type="text" required value="<?php echo $pTipo;?>" name = "product_Tipo" id="product_Tipo" placeholder = "Entre el tipo de producto">
+                </div>
+                <div>
                     <label for="product_Img">Image:</label>
                     <!-- <?php echo $pImg;?> -->
                     <?php
@@ -177,7 +194,7 @@ session_start();
                 </div>
                 <button type="submit" name="action" <?php echo($action=="Seleccionar")?"disabled":""; ?> value="Add" >Add</button>
                 <button type="submit" name="action" <?php echo($action!="Seleccionar")?"disabled":""; ?> value="Modify" >Modify</button>
-                <button type="submit" name="action" <?php echo($action!="Seleccionar")?"disabled":""; ?> value="Cancel" >Cancel</button>
+                <button type="submit" name="action" value="Cancel" >Cancel</button>
             </form>
         </div>
         <div class="second">
@@ -191,22 +208,27 @@ session_start();
                         <th>detail</th>
                         <th>price</th>
                         <th>Imagen</th>
-                        <th>Acctions</th>
+                        <th>cantidad</th>
+                        <th>Tipo</th>
+                        <th>Acions</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     <?PHP foreach($listaProductos as $productos) { ?>
                     <tr>
                         <td><?php echo $productos['Id'];  ?></td>
-                        <td><?php echo $productos['Name'];  ?></td>
-                        <td><?php echo $productos['Brand'];  ?></td>
-                        <td><?php echo $productos['Detail'];  ?></td>
-                        <td><?php echo $productos['Price'];  ?></td>
+                        <td><?php echo $productos['Nombre'];  ?></td>
+                        <td><?php echo $productos['Marca'];  ?></td>
+                        <td><?php echo $productos['Detalles'];  ?></td>
+                        <td><?php echo $productos['Precio'];  ?></td>
                         <td>
                             
                             <img src="../../img/products/<?php echo $productos['Img'];?>" width="50" >
 
                         </td>
+                        <td><?php echo $productos['Cantidad'];  ?></td>
+                        <td><?php echo $productos['Tipo'];  ?></td>
                         <td><form method="post">
                             <input type="hidden" name="product_Id" id="product_Id" value=" <?php echo $productos['Id'];?>">
                             <input type="submit" name="action" value="Seleccionar">

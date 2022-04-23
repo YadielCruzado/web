@@ -1,6 +1,6 @@
 <?php
 include("dashboard/config/db.php");
-include("cart.php");
+// include("cart.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
