@@ -97,7 +97,7 @@ session_start();
                     <input type="text" required value="<?php echo $pName;?>" name = "Categori_Name" id="Categori_Name" placeholder = "Enter the product name">
                 </div>
                 <div>
-                    <label for="categori_Product">Brand:</label>
+                    <label for="categori_Product">Producto:</label>
                     <input type="text" required value="<?php echo $pProduct;?>" name = "categori_Product" id="categori_Product" placeholder = "Entre el tipo de product">
                 </div>
                 <button type="submit" name="action" <?php echo($action=="Seleccionar")?"disabled":""; ?> value="Add" >Add</button>

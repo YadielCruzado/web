@@ -9,7 +9,7 @@ $SQL=$conexion->prepare("SELECT * from categorias");
 $SQL->execute();
 $categorias=$SQL->fetchAll(PDO::FETCH_ASSOC);
 
-// $total_Productos = $conexion->query("SELECT * from productos where cantidad > 0")->rowCount();//  para ver el total de productos
+$total_Productos = $conexion->query("SELECT * from productos where cantidad > 0")->rowCount();//  para ver el total de productos
 ?>
 
     <main>

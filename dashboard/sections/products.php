@@ -175,12 +175,13 @@ session_start();
                     <input type="text" required value="<?php echo $pPrice;?>" name = "product_Price" id="product_Price" placeholder = "Enter the product Price">
                 </div>
                 <div>
-                    <label for="product_cantidad">cantidad:</label>
+                    <label for="product_cantidad">Cantidad:</label>
                     <input type="text" required value="<?php echo $pCantidad;?>" name = "product_Cantidad" id="product_Cantidad" placeholder = "Enter the product cantidad">
                 </div>
                 <div>
                     <label for="product_Tipo">Tipo:</label>
-                    <input type="text" required value="<?php echo $pTipo;?>" name = "product_Tipo" id="product_Tipo" placeholder = "Entre el tipo de producto">
+                    <input type="radio" required value="Carrito" name = "product_Tipo" id="product_TipoC"><label for="product_TipoC">Carrito</label>
+                    <input type="radio" required value="Baterias" name = "product_Tipo" id="product_TipoB"><label for="product_TipoB">Baterias</label>
                 </div>
                 <div>
                     <label for="product_Img">Image:</label>
