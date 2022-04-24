@@ -86,7 +86,7 @@ session_start();
     </header>
     <section class="info">
         <div class="first">
-            <h2>Anadir productos</h2>
+            <h2>Añadir productos</h2>
             <form method="post" enctype="multipart/form-data">
                 <div>
                     <label for="Categori_Id">ID:</label>
@@ -100,9 +100,9 @@ session_start();
                     <label for="categori_Product">Producto:</label>
                     <input type="text" required value="<?php echo $pProduct;?>" name = "categori_Product" id="categori_Product" placeholder = "Entre el tipo de product">
                 </div>
-                <button type="submit" name="action" <?php echo($action=="Seleccionar")?"disabled":""; ?> value="Add" >Add</button>
-                <button type="submit" name="action" <?php echo($action!="Seleccionar")?"disabled":""; ?> value="Modify" >Modify</button>
-                <button type="submit" name="action" <?php echo($action!="Seleccionar")?"disabled":""; ?> value="Cancel" >Cancel</button>
+                <button type="submit" name="action" <?php echo($action=="Seleccionar")?"disabled":""; ?> value="Add" >Añadir</button>
+                <button type="submit" name="action" <?php echo($action!="Seleccionar")?"disabled":""; ?> value="Modify" >Modificar</button>
+                <button type="submit" name="action"  value="Cancel" >Cancel</button>
             </form>
         </div>
         <div class="second">
@@ -113,6 +113,7 @@ session_start();
                         <th>ID</th>
                         <th>Name</th>
                         <th>Producto</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>

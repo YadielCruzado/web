@@ -152,7 +152,7 @@ session_start();
     </header>
     <section class="info">
         <div class="first">
-            <h2>Anadir productos</h2>
+            <h2>Añadir productos</h2>
             <form method="post" enctype="multipart/form-data">
                 <div>
                     <label for="ID">ID:</label>
@@ -193,8 +193,8 @@ session_start();
 
                     <input type="file" name="product_Img" id="product_Img" placeholder = "Enter the product picture">
                 </div>
-                <button type="submit" name="action" <?php echo($action=="Seleccionar")?"disabled":""; ?> value="Add" >Add</button>
-                <button type="submit" name="action" <?php echo($action!="Seleccionar")?"disabled":""; ?> value="Modify" >Modify</button>
+                <button type="submit" name="action" <?php echo($action=="Seleccionar")?"disabled":""; ?> value="Add" >Añadir</button>
+                <button type="submit" name="action" <?php echo($action!="Seleccionar")?"disabled":""; ?> value="Modify" >Modificar</button>
                 <button type="submit" name="action" value="Cancel" >Cancel</button>
             </form>
         </div>
@@ -211,7 +211,7 @@ session_start();
                         <th>Imagen</th>
                         <th>cantidad</th>
                         <th>Tipo</th>
-                        <th>Acions</th>
+                        <th>Acciones</th>
                         
                     </tr>
                 </thead>
